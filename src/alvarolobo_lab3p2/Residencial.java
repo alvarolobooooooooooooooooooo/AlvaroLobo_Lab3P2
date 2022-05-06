@@ -50,7 +50,7 @@ public class Residencial {
         System.out.println("2. Apartamento");
         System.out.println("3. Edificio");
 
-        System.out.println("Opcion: ");
+        System.out.print("Opcion: ");
         int opcion = lea.nextInt();
         
         switch(opcion){
@@ -61,10 +61,24 @@ public class Residencial {
                 break;
                 
             case 2:
+                for (Object o : bienes) {
+                    if (o instanceof Edificio) {
+                        System.out.println( "" + bienes.indexOf(o)+ "- " + o);
+                    }
+                }
+                System.out.println("Edificio: ");
+                opcion = lea.nextInt();
+                
                 Apartamento a = b.agregarApartamento();
                 bienes.add(a);
                 break;
+                
+            case 3:
+                Edificio e = b.agregarEdificio();
+                bienes.add(e);
+                break;
         }
+        
     }
 
     @Override

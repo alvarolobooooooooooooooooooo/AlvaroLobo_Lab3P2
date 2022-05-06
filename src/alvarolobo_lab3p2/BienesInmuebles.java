@@ -66,7 +66,7 @@ public class BienesInmuebles {
         System.out.print("Numero: ");
         int numero = lea.nextInt();
         
-        System.out.print("Colonia a la que pertenece: ");
+        System.out.print("Referencia: ");
         lea.nextLine();
         String referencia = lea.nextLine();
         
@@ -92,12 +92,36 @@ public class BienesInmuebles {
         int numero = lea.nextInt();
         
         System.out.println("Referencia: ");
+        lea.nextLine();
         String referencia = lea.nextLine();
         
         Apartamento a = new Apartamento(numero, referencia, direccion, dimensiones, id);
         return a;
     }
     
+    public Edificio agregarEdificio(){
+        Scanner lea = new Scanner(System.in);
+
+        System.out.print("Direccion: ");
+        String direccion = lea.nextLine();
+        
+        System.out.print("Dimensiones: ");
+        String dimensiones = lea.nextLine();
+        
+        System.out.print("ID: ");
+        int id = lea.nextInt();
+        
+        System.out.print("Numero de locales: ");
+        int numero = lea.nextInt();
+        
+        System.out.print("Nombre del Edificio: ");
+        lea.nextLine();
+        String nombre = lea.nextLine();
+        
+        Edificio e = new Edificio(numero, nombre, direccion, dimensiones, id);
+        
+        return e;
+    }
 
     @Override
     public String toString() {
